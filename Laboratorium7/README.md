@@ -3,51 +3,65 @@
 
 
 Sprawdzenie połączenia z redis:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad1.PNG)
 
 Przypisanie wartości:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad2.PNG) 
 
 Dodanie ``decode-responses=True``:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad2a.PNG) 
 
 Append (dodaje wartość do klucza), delete (usuwa klucz)
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad2b.PNG) 
 
 Dodanie i odejmowanie: set (usuwa wartość klucza), incr (zwiększa wartość klucza), decr (zmniejsza wartość klucza)
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad2c.PNG)  
 
 
 ## Listy
 
 rpush (dodaje elementy do listy), lrange (zwraca elementy listy)
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad3.PNG) 
 
 Drugi przykład:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad3a.PNG) 
 
 brpop (zwraca ostatni element listy), robi to w pętli do momentu kiedy skończy się lista
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad3b.PNG) 
 
 db (połączenie z bazą danych). Zapisujemy dane na bazie zerowej (domyślnej), a odczytujemy na pierwszej 
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad3c.PNG) 
 
 setex (ustawia wartość klucza i jego czas życia)
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad3d.PNG) 
 
 Niżej przedstawiony kod działa tak samo jak ten wyżej, z tym że teraz użyliśmy poleceń set i expire:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad3e.PNG) 
 
 
 ## Zbiory
 
 Uruchamiamy program kilka razy, za każdym razem elementy zbioru są wyświetlane w innej kolejności
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad4.PNG) 
 
 zrange (sortuje klucze według wartości), `withscores=True` (klucze wyświetlają się z wartościami)
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad4a.PNG) 
 
 hash (mapy, słowniki)
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad4b.PNG) 
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad4b1.PNG) 
 
@@ -55,57 +69,71 @@ hash (mapy, słowniki)
 ## Pubsub
 
 Tworzenie użytkownika z kluczem "testowy_kanal":
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad5.PNG) 
 
 `_*` (Podłączanie się do kanałów)
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad5a.PNG) 
 
 
 ## Strumienie
 
 Utworzenie strumienia. Pierwsze liczby do milisekundy od 1 stycznia 1970
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad6.PNG) 
 
 Dodanie elemntu do strumienia:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad6a.PNG)
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad6a1.PNG) 
 
 Kod który sprawia że elementy nie giną:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad6b.PNG) 
 
 
 ## Pipelining
 
 Sprawdzenie czy klucz się nie zmienił. Błąd oznacza że klucz się zmienił
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad7.PNG) 
 
 
 ## Lua
 
 eval (przekazuje script do Redisa). Redis wykonuje kod i zwraca rezultat.  Drugi argument eval to 0, określa ilość argumentów które można przekazać do skryptu.
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad8.PNG) 
 
 Pierwsze dwa parametry to klucze następne to wartości. Skrypt przekazuje dane i zwraca je jako tablicę
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad8a.PNG) 
 
 Kod, który zwraca tablice 10-elementową
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad8b.PNG) 
 
 Kod, który dodaje dwie liczby przy wykorzystaniu json
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad8c.PNG)
 
 Dodanie 10 i 5:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad8d.PNG)
 
 sha (uruchamia skrypt w sieci)
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad8e.PNG)
 
 
 
 Nasłuchiwanie zmiany klucza:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad9.PNG)
 
 Powiadomienia o użyciu komendy set:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/przyklad9a.PNG)
 
 
@@ -113,13 +141,16 @@ Powiadomienia o użyciu komendy set:
 
 ### Wygląd strony
 Przed wyszukaniem obrazka:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/thumbnailer.PNG)
 
 Po wyszukaniu obrazka:
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/thumbnailer1.PNG)
 
 Wynik: 
 Obrazek w wersji podstawowej, nowo utworzony obrazek w formacie 128x128 oraz plik zip
+
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium7/ss/thumbnailer2.PNG)
 
 
