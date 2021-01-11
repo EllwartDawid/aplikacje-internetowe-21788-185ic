@@ -30,3 +30,15 @@ def make_thumbnails(file_path, thumbnails=[]):
 
     return results
 
+# Taski okresowe
+
+# Task wykonywany o określonym czasie
+@shared_task(name='test')
+def send_notifiction():
+     print('Hello there mortals')
+     # Another trick
+
+# Task wykonywany co 10 sekund
+@shared_task(name='summary') 
+def send_import_summary():
+    print('Hello there every 10 sec')

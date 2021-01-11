@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+from celery.schedules import crontab
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'thumbnailer.apps.ThumbnailerConfig',
     'widget_tweaks',
+    'django_celery_beat',
     
 ]
 
@@ -142,3 +143,16 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
+
+
+CELERY_BEAT_SCHEDULE = {
+'beat co 10 sekund': { 
+       'task': 'summary',
+       'schedule': 10.0
+    },
+    
+    'Witaj o 15:05': {  
+         'task': 'test', 
+         'schedule': crontab(hour=15, minute=5), 
+    },
+}
