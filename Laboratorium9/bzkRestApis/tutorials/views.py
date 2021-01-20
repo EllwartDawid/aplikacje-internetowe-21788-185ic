@@ -18,7 +18,6 @@ def tutorial_list(request):
         
         tutorials_serializer = TutorialSerializer(tutorials, many=True)
         return JsonResponse(tutorials_serializer.data, safe=False)
-        # 'safe=False' for objects serialization
  
     elif request.method == 'POST':
         tutorial_data = JSONParser().parse(request)
