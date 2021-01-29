@@ -9,9 +9,17 @@
 
 ![App](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium9/ss/add.PNG)
 
+# Po dodaniu
+
+![Nie działa](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium9/ss/dodane.PNG)
+
 # Widok dodanych elementów
 
-![Nie działa](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium9/ss/lista.PNG)
+![Nie działa](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium9/ss/listatutoriali.PNG)
+
+# Edytowanie
+
+![Nie działa](https://github.com/EllwartDawid/aplikacje-internetowe-21788-185ic/blob/master/Laboratorium9/ss/edit.PNG)
 
 Do pliku `setting.py` dodajemy nastepujący kod:
 
